@@ -50,7 +50,7 @@ shinyUI(fluidPage(
                                   selected = "Date",
                                   multiple = FALSE), 
                       p("Select outcome, regions, and plotting start date from drop-down menues to update plots."),
-                      dateInput("date_chosen","Date:")
+                      dateInput("date_chosen","Date:",value = "2020-03-01", min = "2019-11-01", max = NULL,)
                  ),
                   
                  
@@ -58,7 +58,15 @@ shinyUI(fluidPage(
                      tabsetPanel(
                          tabPanel("New", plotlyOutput("country_plot")),
                          tabPanel("Cumulative", plotlyOutput("country_plot_cumulative")),
-                         tabPanel("Cumulative (log10)", plotlyOutput("country_plot_cumulative_log"))
+                         tabPanel("Cumulative (log10)", plotlyOutput("country_plot_cumulative_log")),
+                         tabPanel("Usage",
+                                  h3("1. Select the Country/Region"),
+                                  h3("2. Select one outcome type (Cases or Deaths)"),
+                                  h3("3. Select one start date type (Date, Day of 100th comfirmed case or Day of 10th death)"),
+                                  h5('In the main panel, "New" plots the daily new cases/deaths in the countries/regions selected."Cumulative" plots the total new cases/deaths curve. "Cumulative(log10)" plots the total new cases/deaths curve under logarithm scale.'),
+                                  h5('When start date is selected as 100th confirmed case or 10th death, the x coordinate will automatically be re-scaled, the number hereafter represents the number of days after the 100th comfirmed or 10th death case declared.'),
+                                  h5('When start date is selected as "Date", then a particular date should be selected.')
+                                  )
                      )
                  )
              )
