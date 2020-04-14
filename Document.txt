@@ -1,0 +1,14 @@
+This is an Shiny applications deveoloped as the final project in the Developing Data Products course. This application is a plotter for Evolution of Covid-19 infected cases in the world. The data used are from [Open Data of European Centre for Disease Prevention and Control](https://opendata.ecdc.europa.eu/covid19/casedistribution/csv)
+
+In order to use, 
+
+Select the Countries/Regions
+Select one outcome type(cases or deaths)
+Select one start date type(Particular date, day of 100th comfirmed case or day of 10th deaths)
+
+In the main panel, "New" plots the daily new cases/deaths in the countries/regions selected.
+"Cumulative" plots the total new cases/deaths curve. "Cumulative(log10)" plots the total new cases/deaths curve under logarithm scale. 
+
+When start date is selected as 100th confirmed case or 10th death case, the x coordinate will automatically be re-scaled, the number hereafter represents the number of day after the 100th comfirmed or 10th death case declared.
+
+When start date is selected as "Date", then a date should be selected.
